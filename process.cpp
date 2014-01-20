@@ -1,7 +1,7 @@
 #include "process.h"
 
 int createProcesses(int number){
-	printf('processes');
+	printf("processes");
 	return 0;
 }
 

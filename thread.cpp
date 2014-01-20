@@ -1,7 +1,7 @@
 #include "prime.h"
 
-int createThreads(){
-	printf('threads');
+int createThreads(int number){
+	printf("threads");
 	return 0;
 }
 

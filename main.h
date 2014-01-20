@@ -1,5 +1,5 @@
-#ifndef MAIN
-#define MAIN
+#ifndef MAIN_PROG
+#define MAIN_PROG
 
 #include "thread.h"
 #include "process.h"

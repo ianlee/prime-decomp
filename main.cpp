@@ -14,10 +14,12 @@ int main (int argc, char **argv){
 	while ((opt = getopt (argc, argv, OPTIONS))!=-1) {
 		switch (opt){
 			case 'p':
-				
+				number = atoi(optarg);
+				createProcesses(number);
 			break;
 			case 't':
-				
+				number = atoi(optarg);
+				createThreads(number);
 			break;
 			default:
 			case '?':

@@ -8,6 +8,7 @@
 int main (int argc, char **argv){
 	int opt;
 	int number;
+	int type;
 	if (argc < 2){
 		usage(argv);
 	}
@@ -15,11 +16,12 @@ int main (int argc, char **argv){
 		switch (opt){
 			case 'p':
 				number = atoi(optarg);
-				createProcesses(number);
+				type = 1;
 			break;
 			case 't':
 				number = atoi(optarg);
-				createThreads(number);
+				type = 2;
+
 			break;
 			default:
 			case '?':
@@ -27,6 +29,13 @@ int main (int argc, char **argv){
 			break;
 
 		}
+	}
+	
+	printf("main\n");
+	if (type ==1){
+		createProcesses(number);		
+	} else if(type == 2){
+		createThreads(number);
 	}
 
 

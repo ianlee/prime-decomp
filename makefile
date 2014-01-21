@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall -g
-LDFLAGS = -lm
+LDFLAGS = -lpthread
 
 all: myprogram
 
@@ -11,7 +11,7 @@ process.o : process.cpp process.h prime.h
 	${CC} ${CFLAGS} -c process.cpp
 
 thread.o : thread.cpp thread.h prime.h
-	${CC} ${CFLAGS} -c thread.cpp
+	${CC} ${CFLAGS} -c thread.cpp -lpthread
 
 main.o : main.cpp main.h thread.h process.h
 	${CC} ${CFLAGS} -c main.cpp

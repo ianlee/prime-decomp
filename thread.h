@@ -1,7 +1,7 @@
 #ifndef THREADS
 #define THREADS
 
-#define NUM_THREAD 5
+
 #include "prime.h"
 #include <stdio.h>
 #include <pthread.h>

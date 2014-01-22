@@ -2,7 +2,7 @@
 
 int createProcesses(int number){
 	prime_data data;
-	pid_t childpid[NUM_PROCESS] ;
+	pid_t childpid[NUM_THEADS] ;
 	int i;
 	timeval starttime, endtime;
 	int seconds, milliseconds;
@@ -11,8 +11,8 @@ int createProcesses(int number){
 
 	data.number = number;
 
-	gettimeofday (&starttime, NULL); //stop time
-	for(i= 0; i<NUM_PROCESS; i++){
+	gettimeofday (&starttime, NULL); //start time
+	for(i= 0; i<NUM_THREADS; i++){
 		if((childpid[i] = fork()) ==0){
 			//is child
 			data.start = i;
@@ -24,7 +24,7 @@ int createProcesses(int number){
 			//error
 		}
 	}
-	for (i = 0; i < NUM_PROCESS; i++) {
+	for (i = 0; i < NUM_THEADS; i++) {
 		int status;
 		while (-1 == waitpid(childpid[i], &status, 0));
 		if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {

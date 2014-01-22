@@ -2,7 +2,7 @@
 
 int createThreads(int number){
 	prime_data data = malloc(sizeof(prime_data));
-	pthread_t* threads[NUM_THREAD];
+	pthread_t* threads[NUM_THREADS];
 	int i;
 	timeval starttime, endtime;
 	int seconds, milliseconds;
@@ -12,12 +12,12 @@ int createThreads(int number){
 
 	gettimeofday (&starttime, NULL); //stop time
 	printf("threads");
-	for (i = 0; i< NUM_THREAD; i++){
+	for (i = 0; i< NUM_THREADS; i++){
 		data.start = i;
 		pthread_create (&(threads[i]), NULL, prime, (void*) &data);
 
 	}
-	for (i = 0; i < NUM_THREAD; i++) {
+	for (i = 0; i < NUM_THREADS; i++) {
 		pthread_join (threads[i], NULL);
 	}
 	gettimeofday (&endtime, NULL); //stop time

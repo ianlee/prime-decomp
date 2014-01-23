@@ -6,13 +6,13 @@
 
 
 void* prime(void * data1);
-int decompose(int number);
+int decompose(long number);
 
 
 
 struct prime_data {
-	int number;
-	int start;
+	long number;
+	long start;
 
 };
 #endif

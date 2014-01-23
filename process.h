@@ -3,9 +3,11 @@
 #include "prime.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <time.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 
-int createProcesses(int number);
+int createProcesses(long number);
 
 #endif

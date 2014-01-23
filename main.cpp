@@ -7,7 +7,7 @@
 
 int main (int argc, char **argv){
 	int opt;
-	int number;
+	long number;
 	int type;
 	if (argc < 2){
 		usage(argv);
@@ -15,11 +15,11 @@ int main (int argc, char **argv){
 	while ((opt = getopt (argc, argv, OPTIONS))!=-1) {
 		switch (opt){
 			case 'p':
-				number = atoi(optarg);
+				number = atol(optarg);
 				type = 1;
 			break;
 			case 't':
-				number = atoi(optarg);
+				number = atol(optarg);
 				type = 2;
 
 			break;

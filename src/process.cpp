@@ -6,8 +6,10 @@ int createProcesses(long number){
 	int i;
 	timeval starttime, endtime;
 	int seconds, milliseconds;
+	FILE* fp = fopen("process.txt", "a");
+	data.fp = fopen("primes.txt", "a");
 	
-	printf("processes\n");
+
 
 	data.number = number;
 
@@ -36,7 +38,9 @@ int createProcesses(long number){
 	gettimeofday (&endtime, NULL); //stop time
 	seconds = endtime.tv_sec - starttime.tv_sec;
 	milliseconds = endtime.tv_usec - starttime.tv_usec;
-	printf ("%ds %dusec", seconds, milliseconds);
+	fprintf (fp, "%ds %dusec\n", seconds, milliseconds);
+	fclose(fp);
+	fclose(data.fp);
 	return 0;
 }
 

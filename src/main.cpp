@@ -31,7 +31,7 @@ int main (int argc, char **argv){
 		}
 	}
 	
-	printf("main\n");
+
 	if (type ==1){
 		createProcesses(number);		
 	} else if(type == 2){

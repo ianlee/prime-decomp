@@ -2,6 +2,8 @@
 #define PRIME
 
 #include <stdio.h>
+
+
 #define NUM_THREADS 5
 
 
@@ -13,6 +15,6 @@ int decompose(long number);
 struct prime_data {
 	long number;
 	long start;
-
+	FILE* fp;
 };
 #endif

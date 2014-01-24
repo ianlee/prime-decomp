@@ -20,5 +20,5 @@ myprogram : main.o thread.o process.o prime.o
 	${CC} ${CFLAGS} main.o thread.o process.o prime.o ${LDFLAGS} -o a
 
 clean:
-	rm -rf *.o hello
+	rm -rf *.o a *.cpp~ *.h~
 

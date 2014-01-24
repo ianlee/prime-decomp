@@ -7,8 +7,6 @@ void* prime(void* data1){
 	long start = data.start * (data.number / NUM_THREADS) ;
 	long end = (data.start == NUM_THREADS -1)?data.number : (data.start + 1) * (data.number/NUM_THREADS);
 	
-	printf("Find prime factors between %ld and %ld\n", start, end);
-	
 	start = (start < 2)?2:start;
 	//all numbers between start and end
 	for(i=start;i<end;i++) {
@@ -24,7 +22,7 @@ void* prime(void* data1){
 			}
 			//number is prime
 			if(prime==1) {
-				printf("%ld, ", i);
+				fprintf(data.fp, "%ld, ", i);
 			}
 		}
     }

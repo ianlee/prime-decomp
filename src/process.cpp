@@ -9,7 +9,10 @@ int createProcesses(long number){
 	FILE* fp = fopen("process.txt", "a");
 	data.fp = fopen("primes.txt", "a");
 	
-
+	fprintf (fp, "%ld\t", number);
+	fprintf (data.fp, "%ld\t", number);
+	fflush(fp);
+	fflush(data.fp);
 
 	data.number = number;
 
@@ -39,6 +42,7 @@ int createProcesses(long number){
 	seconds = endtime.tv_sec - starttime.tv_sec;
 	milliseconds = endtime.tv_usec - starttime.tv_usec;
 	fprintf (fp, "%ds %dusec\n", seconds, milliseconds);
+	fprintf (data.fp, "\n");
 	fclose(fp);
 	fclose(data.fp);
 	return 0;

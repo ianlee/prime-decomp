@@ -9,8 +9,10 @@ int createThreads(long number){
 	int seconds, milliseconds;
 	FILE* fp = fopen("thread.txt", "a");
 	FILE* fp2= fopen("primes.txt", "a");	
-
-
+	fprintf (fp, "%ld\t", number);
+	fprintf (fp2, "%ld\t", number);
+	fflush(fp);
+	fflush(fp2);
 
 
 
@@ -30,7 +32,7 @@ int createThreads(long number){
 	seconds = endtime.tv_sec - starttime.tv_sec;
 	milliseconds = endtime.tv_usec - starttime.tv_usec;
 	fprintf (fp, "%ds %dusec\n", seconds, milliseconds);
-
+	fprintf (fp2, "\n");
 	fclose(fp);
 	fclose(fp2);
 	return 0;

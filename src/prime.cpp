@@ -22,7 +22,7 @@ void* prime(void* data1){
 			}
 			//number is prime
 			if(prime==1) {
-				fprintf(data.fp, "%ld, ", i);
+				fprintf(data.fp, "%ld ", i);
 			}
 		}
     }

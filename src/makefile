@@ -17,7 +17,7 @@ main.o : main.cpp main.h thread.h process.h
 	${CC} ${CFLAGS} -c main.cpp
 
 myprogram : main.o thread.o process.o prime.o
-	${CC} ${CFLAGS} main.o thread.o process.o prime.o ${LDFLAGS} -o ../a
+	${CC} ${CFLAGS} main.o thread.o process.o prime.o ${LDFLAGS} -o ../ipfd
 
 clean:
 	rm -rf *.o a *.cpp~ *.h~
